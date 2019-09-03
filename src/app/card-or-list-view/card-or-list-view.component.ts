@@ -1,4 +1,17 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ContentChild, Directive, Input, OnInit, TemplateRef} from '@angular/core';
+
+@Directive({
+  selector: '[cardItem]'
+})
+export class CardItemDirective {
+}
+
+@Directive({
+  selector: '[listItem]'
+})
+export class ListItemDirective {
+}
+
 
 @Component({
   selector: 'app-card-or-list-view',
@@ -13,6 +26,10 @@ export class CardOrListViewComponent implements OnInit {
   }[] = [];
 
   @Input() mode: 'card' | 'list' = 'card';
+
+  @ContentChild(CardItemDirective, {static: false, read: TemplateRef}) cardItemTemplate;
+  @ContentChild(ListItemDirective, {static: false, read: TemplateRef}) listItemTemplate;
+
 
   constructor() {
   }

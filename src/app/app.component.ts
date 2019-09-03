@@ -9,8 +9,12 @@ export class AppComponent {
   mode = 'list';
   items = [
     {
-      header: 'Creating Reuseable Components with NgTemplateOutlet in Angular',
-      content: 'The single responsibility principle...'
+      header: 'Example1',
+      content: 'Content1'
+    },
+    {
+      header: 'Example2',
+      content: 'Content2'
     }
   ];
 }
